@@ -43,5 +43,27 @@ public class EndpointController {
         service.spreadMessage(id, message);
         return ResponseEntity.status(HttpStatus.OK).body("OK!");
     }
+
+    @PostMapping("/exit")
+    public ResponseEntity<String> exitReceived() {
+        logger.info("Exit message received. Exiting...");
+        System.exit(0);
+        return ResponseEntity.status(HttpStatus.OK).body("OK!");
+    }
+
+    @PostMapping("/exit/force")
+    public ResponseEntity<String> forceExitReceived() {
+        service.setForceExit(true);
+        logger.info("Force exit message received. Exiting...");
+        System.exit(0);
+        return ResponseEntity.status(HttpStatus.OK).body("OK!");
+    }
+
+    @PostMapping("/delay")
+    public ResponseEntity<String> setDelay(@RequestParam Integer time) {
+        logger.info("Delay message received. Setting delay to " + time + "ms");
+        service.setDelay(time);
+        return ResponseEntity.status(HttpStatus.OK).body("OK!");
+    }
 }
 

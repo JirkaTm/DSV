@@ -23,6 +23,9 @@ public class InputService {
                     if("".equals(input)){
                         continue;
                     }
+                    if("--exit".equals(input)){
+                        System.exit(0);
+                    }
                     service.sendMessage(input);
                 }
             });

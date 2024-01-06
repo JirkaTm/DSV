@@ -11,7 +11,18 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan({"org.example.dsva.controller", "org.example.dsva.service", "org.example.dsva.model"})
 @EntityScan("org.example.dsva.")
 public class DsVaApplication {
+    public static int cwsNum;
+
     public static void main(String[] args) {
+        for(String arg:args) {
+            try {
+                cwsNum = Integer.parseInt(arg);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid argument: " + arg);
+                System.exit(1);
+            }
+        }
         SpringApplication.run(DsVaApplication.class, args);
     }
 }
