@@ -1,5 +1,12 @@
 Návod na spuštění programu
 ==========================
+Požadavky
+---------
+- Java 17
+- Maven 3.6.3
+
+Spuštění
+--------
 1. V souboru /src/main/resources/connections.txt je potřeba nakonfigurovat všechny (i lokální) uzly systému. 
     Každý uzel musí být na samostatném řádku a musí obsahovat 
     následující informace oddělené mezerou:
