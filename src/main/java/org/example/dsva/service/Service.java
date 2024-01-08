@@ -140,8 +140,6 @@ public class Service {
                 });
             }
             sendCachedMessages();
-        } else {
-            logger.info("Waiting for victory message");
         }
     }
 

@@ -14,6 +14,10 @@ public class DsVaApplication {
     public static int cwsNum;
 
     public static void main(String[] args) {
+        if (args.length == 0 || args[0].equals("0")) {
+            System.out.println("No argument provided. Shutting down...");
+            System.exit(1);
+        }
         for(String arg:args) {
             try {
                 cwsNum = Integer.parseInt(arg);
